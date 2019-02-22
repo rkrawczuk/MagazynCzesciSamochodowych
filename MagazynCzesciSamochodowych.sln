@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28010.2050
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MagazynCzesciSamochodowych", "MagazynCzesciSamochodowych\MagazynCzesciSamochodowych.csproj", "{93B07E3A-49C4-4AD8-9D82-58F8C66B324F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MagazynCzesciSamochodowychTests", "MagazynCzesciSamochodowychTests\MagazynCzesciSamochodowychTests.csproj", "{CE6D984A-F19E-40D2-BEAA-D5A78E852E40}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{93B07E3A-49C4-4AD8-9D82-58F8C66B324F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{93B07E3A-49C4-4AD8-9D82-58F8C66B324F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{93B07E3A-49C4-4AD8-9D82-58F8C66B324F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE6D984A-F19E-40D2-BEAA-D5A78E852E40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE6D984A-F19E-40D2-BEAA-D5A78E852E40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE6D984A-F19E-40D2-BEAA-D5A78E852E40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE6D984A-F19E-40D2-BEAA-D5A78E852E40}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
