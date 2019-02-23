@@ -18,7 +18,7 @@ namespace MagazynCzesciSamochodowychTests
             DesktopOptions options = new DesktopOptions();
             string path = System.IO.Path.GetDirectoryName(typeof(Form1).Assembly.Location);
             options.ApplicationPath = path + @"\MagazynCzesciSamochodowych.exe";
-            driver = new WiniumDriver(path, options);
+            driver = new WiniumDriver(@"C:\Users\Krawczuk\Desktop\MagazynCzesciSamochodowych\MagazynCzesciSamochodowych", options);
 
         }
 
