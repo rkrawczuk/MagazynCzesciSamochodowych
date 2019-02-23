@@ -69,6 +69,7 @@
   <ItemGroup>
     <Compile Include="UnitTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WiniumTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
