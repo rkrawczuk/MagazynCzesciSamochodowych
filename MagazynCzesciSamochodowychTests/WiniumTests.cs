@@ -40,7 +40,43 @@ namespace MagazynCzesciSamochodowychTests
             driver.Close();
         }
 
-       
+        [TestMethod()]
+        public void emptyTextBoxes()
+        {
+            DesktopOptions options = new DesktopOptions();
+            options.ApplicationPath = @"C:\Users\Krawczuk\Desktop\MagazynCzesciSamochodowych\MagazynCzesciSamochodowych\MagazynCzesciSamochodowych\bin\Debug\MagazynCzesciSamochodowych.exe";
+            WiniumDriver driver = new WiniumDriver(@"C:\Users\Krawczuk\Desktop\MagazynCzesciSamochodowych\MagazynCzesciSamochodowych\MagazynCzesciSamochodowychTests\bin\Debug", options);
+
+            driver.FindElementByName("addItem").Click();
+            Equals(true, driver.FindElementByName("Wszystkie dane muszą być uzupełnione"));
+            driver.FindElementByName("Zamknij").Click();
+            driver.Close();
+
+        }
+
+        [TestMethod()]
+        public void itemNotSelected()
+        {
+            DesktopOptions options = new DesktopOptions();
+            options.ApplicationPath = @"C:\Users\Krawczuk\Desktop\MagazynCzesciSamochodowych\MagazynCzesciSamochodowych\MagazynCzesciSamochodowych\bin\Debug\MagazynCzesciSamochodowych.exe";
+            WiniumDriver driver = new WiniumDriver(@"C:\Users\Krawczuk\Desktop\MagazynCzesciSamochodowych\MagazynCzesciSamochodowych\MagazynCzesciSamochodowychTests\bin\Debug", options);
+
+            driver.FindElementByName("deleteItem").Click();
+            Equals(true, driver.FindElementByName("Błąd usuwania, (nie zaznaczony element)"));
+            driver.FindElementByName("Zamknij").Click();
+
+            driver.FindElementByName("modifyItem").Click();
+            Equals(true, driver.FindElementByName("Nie zaznaczono elementu."));
+            driver.FindElementByName("Zamknij").Click();
+
+            driver.FindElementByName("showItem").Click();
+            Equals(true, driver.FindElementByName("Brak wybranego elementu!"));
+            driver.FindElementByName("Zamknij").Click();
+
+            driver.Close();
+        }
+
+
 
         public void addItem(WiniumDriver driver)
         {
