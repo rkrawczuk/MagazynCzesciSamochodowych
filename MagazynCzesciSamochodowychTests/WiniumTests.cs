@@ -12,12 +12,20 @@ namespace MagazynCzesciSamochodowychTests
     public class WiniumTest
     {
 
+        private readonly WiniumDriver driver;
+        public WiniumTest()
+        {
+            DesktopOptions options = new DesktopOptions();
+            string path = System.IO.Path.GetDirectoryName(typeof(Form1).Assembly.Location);
+            options.ApplicationPath = path + @"\MagazynCzesciSamochodowych.exe";
+            driver = new WiniumDriver(path, options);
+
+        }
+
+
         [TestMethod]
         public void addShowDeleteTest()
         {
-            DesktopOptions options = new DesktopOptions();
-            options.ApplicationPath = @"C:\Users\Krawczuk\Desktop\MagazynCzesciSamochodowych\MagazynCzesciSamochodowych\MagazynCzesciSamochodowych\bin\Debug\MagazynCzesciSamochodowych.exe";
-            WiniumDriver driver = new WiniumDriver(@"C:\Users\Krawczuk\Desktop\MagazynCzesciSamochodowych\MagazynCzesciSamochodowych\MagazynCzesciSamochodowychTests\bin\Debug", options);
 
             addItem(driver);
             showItem(driver, "NazwaProduktu");
@@ -28,9 +36,6 @@ namespace MagazynCzesciSamochodowychTests
         [TestMethod()]
         public void modifyItem()
         {
-            DesktopOptions options = new DesktopOptions();
-            options.ApplicationPath = @"C:\Users\Krawczuk\Desktop\MagazynCzesciSamochodowych\MagazynCzesciSamochodowych\MagazynCzesciSamochodowych\bin\Debug\MagazynCzesciSamochodowych.exe";
-            WiniumDriver driver = new WiniumDriver(@"C:\Users\Krawczuk\Desktop\MagazynCzesciSamochodowych\MagazynCzesciSamochodowych\MagazynCzesciSamochodowychTests\bin\Debug", options);
 
             driver.FindElementByName("Radio").Click();
             driver.FindElementByName("modifyItem").Click();
@@ -43,9 +48,6 @@ namespace MagazynCzesciSamochodowychTests
         [TestMethod()]
         public void emptyTextBoxes()
         {
-            DesktopOptions options = new DesktopOptions();
-            options.ApplicationPath = @"C:\Users\Krawczuk\Desktop\MagazynCzesciSamochodowych\MagazynCzesciSamochodowych\MagazynCzesciSamochodowych\bin\Debug\MagazynCzesciSamochodowych.exe";
-            WiniumDriver driver = new WiniumDriver(@"C:\Users\Krawczuk\Desktop\MagazynCzesciSamochodowych\MagazynCzesciSamochodowych\MagazynCzesciSamochodowychTests\bin\Debug", options);
 
             driver.FindElementByName("addItem").Click();
             Equals(true, driver.FindElementByName("Wszystkie dane muszą być uzupełnione"));
@@ -57,9 +59,6 @@ namespace MagazynCzesciSamochodowychTests
         [TestMethod()]
         public void itemNotSelected()
         {
-            DesktopOptions options = new DesktopOptions();
-            options.ApplicationPath = @"C:\Users\Krawczuk\Desktop\MagazynCzesciSamochodowych\MagazynCzesciSamochodowych\MagazynCzesciSamochodowych\bin\Debug\MagazynCzesciSamochodowych.exe";
-            WiniumDriver driver = new WiniumDriver(@"C:\Users\Krawczuk\Desktop\MagazynCzesciSamochodowych\MagazynCzesciSamochodowych\MagazynCzesciSamochodowychTests\bin\Debug", options);
 
             driver.FindElementByName("deleteItem").Click();
             Equals(true, driver.FindElementByName("Błąd usuwania, (nie zaznaczony element)"));
@@ -75,8 +74,6 @@ namespace MagazynCzesciSamochodowychTests
 
             driver.Close();
         }
-
-
 
         public void addItem(WiniumDriver driver)
         {
